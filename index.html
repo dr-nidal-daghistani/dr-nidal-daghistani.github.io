@@ -201,15 +201,19 @@
   .cred-badge{
     display:flex;
     align-items:center;
-    gap: 9px;
+    gap: 8px;
     margin-top: 14px;
     padding-top: 14px;
     border-top: 1px dashed var(--navy-line);
-    font-size: 12px;
+    font-size: 11px;
     color: var(--gold);
     font-family:'JetBrains Mono', monospace;
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
   }
+  .cred-badge::-webkit-scrollbar{ display:none; }
   .cred-badge svg{ width:16px; height:16px; flex:0 0 auto; }
 
   .section-label{
@@ -365,6 +369,27 @@
   }
   .t-name::before{ content:"— "; }
 
+  .see-all{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 8px;
+    margin: 18px auto 0;
+    padding: 12px;
+    text-decoration:none;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid var(--navy-line);
+    border-radius: 999px;
+    opacity:0;
+    animation: fadeUp .6s ease forwards .94s;
+    transition: border-color .25s ease, background .25s ease;
+  }
+  .see-all:hover{ border-color: var(--gold); background: rgba(201,169,97,0.06); }
+  .see-all-arrow{ transition: transform .2s ease; }
+  .see-all:hover .see-all-arrow{ transform: translateX(-4px); }
+
   footer{
     text-align:center;
     margin-top: 40px;
@@ -409,7 +434,7 @@
   </div>
 
   <h1><span class="title">Dr. Nidal Daghistani</span>نضال داغستاني</h1>
-  <p class="specialty">استشاري واخصائي تقويم الأسنان والفكين</p>
+  <p class="specialty">اخصائي تقويم الأسنان والفكين</p>
 
   <a class="booking-cta" href="https://wa.me/966563001133" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="#0a1a2f" width="18" height="18"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5.1-1.3A10 10 0 1012 2zm5.7 14.2c-.2.7-1.4 1.3-1.9 1.4-.5.1-1.1.2-3.5-.7-2.9-1.2-4.8-4.1-5-4.3-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.8 1.9.9 2 .1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.4.4-.2.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.7.8 2 .9.3.2.5.2.6.4.1.2.1.9-.1 1.6z"/></svg>
@@ -422,7 +447,7 @@
       <span class="about-eyebrow">نبذة عني</span>
     </div>
     <p class="about-text">
-      استشاري وأخصائي تقويم الأسنان والفكين، بخبرة تتجاوز 30 عامًا في المجال، ومن أوائل المتبنّين لنظام
+      أخصائي تقويم الأسنان والفكين، بخبرة تتجاوز 30 عامًا في المجال، ومن أوائل المتبنّين لنظام
       Insignia المتطور من Ormco في الشرق الأوسط منذ أكثر من 8 سنوات. حاصل على اعتماد مهني رسمي من شركة
       Envista العالمية تقديرًا للخبرة السريرية المتميزة والالتزام بأحدث حلول التقويم الرقمي الدقيق.
     </p>
@@ -450,7 +475,6 @@
         </span>
         <span class="link-text">
           <span class="link-label">انستقرام</span>
-          <span class="link-sub">@dr.nidal_al_daghistani</span>
         </span>
         <span class="arrow">←</span>
       </div>
@@ -462,8 +486,7 @@
           <svg viewBox="0 0 24 24" fill="#c9a961"><path d="M3 3l7.6 9.6L3.4 21h2.3l6.1-7 4.9 7H21l-7.9-10.1L20.4 3h-2.3l-5.6 6.4L7 3H3z"/></svg>
         </span>
         <span class="link-text">
-          <span class="link-label">X (تويتر)</span>
-          <span class="link-sub">@nidal_63</span>
+          <span class="link-label">X</span>
         </span>
         <span class="arrow">←</span>
       </div>
@@ -476,7 +499,6 @@
         </span>
         <span class="link-text">
           <span class="link-label">تيك توك</span>
-          <span class="link-sub">@dr.nidalaldaghistani</span>
         </span>
         <span class="arrow">←</span>
       </div>
@@ -489,7 +511,6 @@
         </span>
         <span class="link-text">
           <span class="link-label">يوتيوب</span>
-          <span class="link-sub">@drnidal-me4et</span>
         </span>
         <span class="arrow">←</span>
       </div>
@@ -502,7 +523,6 @@
         </span>
         <span class="link-text">
           <span class="link-label">سناب شات</span>
-          <span class="link-sub">dr.nidal2</span>
         </span>
         <span class="arrow">←</span>
       </div>
